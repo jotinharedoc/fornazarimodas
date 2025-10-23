@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fornazari Modas - Moda Feminina</title>
+  <meta name="description" content="Há 30 anos, a Fornazari Modas oferece o melhor da moda feminina. Compre online vestidos, croppeds e mais. Frete Grátis e 5% OFF no PIX.">
+  <link rel="stylesheet" href="style.css">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+  
+  <link rel="preconnect" href="https://app.snipcart.com">
+  <link rel="preconnect" href="https://cdn.snipcart.com">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
+  <script defer src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+</head>
+
+<body id="inicio">
+  <header class="cabecalho">
+    <div class="container">
+      <!-- LOGO -->
+      <a href="#inicio" class="logo">Fornazari Modas</a>
+
+
+      <div class="info-carrossel" aria-live="polite">
+        <p class="info-slide ativo"><strong>Frete Grátis</strong> em compras acima de R$ 200,00</p>
+        <p class="info-slide pix-desconto"><strong>5% OFF</strong> no PIX</p>
+      </div>
+
+      <!-- Inicio-catalogo-etc -->
+      <div class="direita-cabecalho">
+        <!-- Menu pc -->
+        <nav class="menu-desktop" aria-label="Navegação principal">
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#quem-somos">Nossa História</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><button class="btn-carrinho snipcart-checkout">🛒 Carrinho</button></li>
+          </ul>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="btn-hamburger" aria-label="Abrir Menu">
+          <span class="linha"></span><span class="linha"></span><span class="linha"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav class="menu-mobile" aria-label="Navegação mobile">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#quem-somos">Nossa História</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><button class="btn-carrinho snipcart-checkout">🛒 Carrinho</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Destaque visual">
+      <video class="hero-video" src="video-background.mp4" autoplay loop muted playsinline poster="hero-poster.jpg"></video>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <h1>Elegância e Estilo em Cada Peça</h1>
+        <p>Descubra as novas coleções e vista-se com confiança.</p>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="vitrine" id="catalogo">
+      <div class="container">
+        <h2>Nossos Destaques</h2>
+        <div class="grid-produtos" id="grid-produtos"></div>
+      </div>
+    </section>
+
+    <section class="quem-somos" id="quem-somos">
+      <div class="container">
+        <div class="quem-somos-conteudo">
+          <div class="quem-somos-imagem">
+            <img src="https://via.placeholder.com/500x500" alt="Fundadora da Fornazari Modas">
+          </div>
+          <div class="quem-somos-texto">
+            <h2>Nossa História</h2>
+            <p>Há 30 anos, nossa jornada no comércio é movida pela paixão em servir.</p>
+            <p>Agora, através do nosso e-commerce, levamos essa tradição e confiança diretamente para você.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <div class="container">
+      <div class="info-rodape">
+        <h3>Fornazari Modas</h3>
+        <p>A moda que expressa quem você é.</p>
+      </div>
+      <div class="contato-rodape">
+        <h3>Contato</h3>
+        <p>Instagram: <a href="https://www.instagram.com/fornazarimodas" target="_blank" rel="noopener">@fornazarimodas</a></p>
+        <p>WhatsApp 1: (14) 99605-3610</p>
+        <p>WhatsApp 2: (14) 99758-4550</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Fornazari Modas. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Snipcart container -->
+  <div id="snipcart"
+       data-api-key="MDgwNTYxMGUtZTE1Yi00MjM1LWI2OWEtZjA1ODk1NWFlOTgzNjM4OTY3NDY0MjY2NDk2OTQ5"
+       data-config-modal-style="side"
+       data-currency="BRL">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
