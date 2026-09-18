@@ -1,121 +1,231 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fornazari Modas - Moda Feminina</title>
-  <meta name="description" content="Há 30 anos, a Fornazari Modas oferece o melhor da moda feminina. Compre online vestidos, croppeds e mais. Frete Grátis e 5% OFF no PIX.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#6d2932" />
+  <meta name="description" content="Senhora Fornazari — moda feminina com elegância, personalidade e uma história construída há mais de 30 anos." />
+  <title>Senhora Fornazari — Moda Feminina</title>
 
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  
-  <link rel="preconnect" href="https://app.snipcart.com">
-  <link rel="preconnect" href="https://cdn.snipcart.com">
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://app.snipcart.com" />
+  <link rel="preconnect" href="https://cdn.snipcart.com" />
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
   <script defer src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 </head>
 
 <body id="inicio">
-  <header class="cabecalho">
+  <div class="barra-anuncio" aria-live="polite">
     <div class="container">
-      <!-- LOGO -->
-      <a href="#inicio" class="logo">Fornazari Modas</a>
+      <p class="anuncio ativo">Frete grátis <span>em compras acima de R$ 200</span></p>
+      <p class="anuncio">5% OFF <span>para pagamentos via PIX</span></p>
+      <p class="anuncio">Moda feminina <span>com curadoria e atendimento próximo</span></p>
+    </div>
+  </div>
 
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="marca" href="#inicio" aria-label="Senhora Fornazari - início">
+        <span class="marca-prefixo">Senhora</span>
+        <strong>Fornazari</strong>
+        <span class="marca-sufixo">moda feminina</span>
+      </a>
 
-      <div class="info-carrossel" aria-live="polite">
-        <p class="info-slide ativo"><strong>Frete Grátis</strong> em compras acima de R$ 200,00</p>
-        <p class="info-slide pix-desconto"><strong>5% OFF</strong> no PIX</p>
-      </div>
+      <nav class="menu-desktop" aria-label="Navegação principal">
+        <a href="#novidades">Novidades</a>
+        <a href="#catalogo">Coleção</a>
+        <a href="#historia">Nossa história</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-      <!-- Inicio-catalogo-etc -->
-      <div class="direita-cabecalho">
-        <!-- Menu pc -->
-        <nav class="menu-desktop" aria-label="Navegação principal">
-          <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#quem-somos">Nossa História</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><button class="btn-carrinho snipcart-checkout">🛒 Carrinho</button></li>
-          </ul>
-        </nav>
+      <div class="acoes-cabecalho">
+        <a class="acao-instagram" href="https://www.instagram.com/fornazarimodas" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram da Senhora Fornazari">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.25-3.1a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05Z"/></svg>
+        </a>
 
-        <!-- Hamburger (mobile) -->
-        <button class="btn-hamburger" aria-label="Abrir Menu">
-          <span class="linha"></span><span class="linha"></span><span class="linha"></span>
+        <button class="acao-carrinho snipcart-checkout" aria-label="Abrir carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2v1h2l2.4 8.2A2 2 0 0 0 10.3 17H18a2 2 0 0 0 1.9-1.4L22 9H8.3L7.7 7H22V5H7.3L7 4Zm4 15a2 2 0 1 1-2 2 2 2 0 0 1 2-2Zm7 0a2 2 0 1 1-2 2 2 2 0 0 1 2-2Z"/></svg>
+          <span class="texto-carrinho">Carrinho</span>
+          <span class="snipcart-items-count contador-carrinho">0</span>
+        </button>
+
+        <button class="btn-menu" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span>
         </button>
       </div>
     </div>
 
-    <!-- Menu mobile -->
     <nav class="menu-mobile" aria-label="Navegação mobile">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#quem-somos">Nossa História</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><button class="btn-carrinho snipcart-checkout">🛒 Carrinho</button></li>
-      </ul>
+      <a href="#novidades">Novidades</a>
+      <a href="#catalogo">Coleção</a>
+      <a href="#historia">Nossa história</a>
+      <a href="#contato">Contato</a>
+      <button class="snipcart-checkout menu-mobile-carrinho">Abrir carrinho</button>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-label="Destaque visual">
-      <video class="hero-video" src="video-background.mp4" autoplay loop muted playsinline poster="hero-poster.jpg"></video>
-      <div class="hero-overlay"></div>
-      <div class="container">
-        <h1>Elegância e Estilo em Cada Peça</h1>
-        <p>Descubra as novas coleções e vista-se com confiança.</p>
-      </div>
-    </section>
+    <section class="hero" id="novidades">
+      <video class="hero-video" src="video-background.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="hero-sombra"></div>
+      <div class="hero-textura" aria-hidden="true"></div>
 
-    <!-- Catálogo -->
-    <section class="vitrine" id="catalogo">
-      <div class="container">
-        <h2>Nossos Destaques</h2>
-        <div class="grid-produtos" id="grid-produtos"></div>
-      </div>
-    </section>
+      <div class="container hero-conteudo">
+        <div class="hero-copy revelar">
+          <span class="eyebrow">Nova fase · mesma essência</span>
+          <h1>Peças para vestir <em>quem você é.</em></h1>
+          <p>Uma curadoria feminina feita para acompanhar a rotina, os encontros e todos os momentos em que você quer se sentir bem.</p>
 
-    <section class="quem-somos" id="quem-somos">
-      <div class="container">
-        <div class="quem-somos-conteudo">
-          <div class="quem-somos-imagem">
-            <img src="https://via.placeholder.com/500x500" alt="Fundadora da Fornazari Modas">
-          </div>
-          <div class="quem-somos-texto">
-            <h2>Nossa História</h2>
-            <p>Há 30 anos, nossa jornada no comércio é movida pela paixão em servir.</p>
-            <p>Agora, através do nosso e-commerce, levamos essa tradição e confiança diretamente para você.</p>
+          <div class="hero-acoes">
+            <a href="#catalogo" class="botao botao-claro">Ver coleção</a>
+            <a href="https://wa.me/5514996053610?text=Olá!%20Vim%20pelo%20site%20da%20Senhora%20Fornazari." target="_blank" rel="noopener noreferrer" class="botao botao-transparente">Falar no WhatsApp</a>
           </div>
         </div>
+
+        <div class="hero-selo revelar" aria-label="Mais de 30 anos de história">
+          <span>há mais de</span>
+          <strong>30</strong>
+          <span>anos vestindo histórias</span>
+        </div>
+      </div>
+
+      <a class="hero-scroll" href="#catalogo" aria-label="Ir para a coleção">
+        <span>descubra</span>
+        <i></i>
+      </a>
+    </section>
+
+    <section class="faixa-editorial" aria-label="Valores da marca">
+      <div class="faixa-track">
+        <span>elegância sem esforço</span><i>✦</i>
+        <span>feito para a vida real</span><i>✦</i>
+        <span>curadoria feminina</span><i>✦</i>
+        <span>atendimento próximo</span><i>✦</i>
+        <span>elegância sem esforço</span><i>✦</i>
+        <span>feito para a vida real</span><i>✦</i>
+        <span>curadoria feminina</span><i>✦</i>
+        <span>atendimento próximo</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="colecao secao" id="catalogo">
+      <div class="container">
+        <div class="cabecalho-secao revelar">
+          <div>
+            <span class="eyebrow escuro">Seleção Senhora Fornazari</span>
+            <h2>Escolhas que ficam.</h2>
+          </div>
+          <p>Uma vitrine enxuta, pensada para destacar cada peça e deixar a compra mais leve, bonita e direta.</p>
+        </div>
+
+        <div class="filtros revelar" role="group" aria-label="Filtrar coleção">
+          <button class="filtro ativo" data-filtro="todos">Todos</button>
+          <button class="filtro" data-filtro="vestidos">Vestidos</button>
+          <button class="filtro" data-filtro="croppeds">Croppeds</button>
+        </div>
+
+        <div class="grid-produtos" id="grid-produtos" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="beneficios secao">
+      <div class="container beneficios-grid">
+        <article class="beneficio revelar">
+          <span class="beneficio-numero">01</span>
+          <div>
+            <h3>Curadoria com intenção</h3>
+            <p>Peças escolhidas para serem bonitas no cabide e ainda melhores no dia a dia.</p>
+          </div>
+        </article>
+
+        <article class="beneficio revelar">
+          <span class="beneficio-numero">02</span>
+          <div>
+            <h3>Compra simples</h3>
+            <p>Selecione sua peça, escolha o tamanho e finalize em poucos passos com segurança.</p>
+          </div>
+        </article>
+
+        <article class="beneficio revelar">
+          <span class="beneficio-numero">03</span>
+          <div>
+            <h3>Atendimento de verdade</h3>
+            <p>Ficou em dúvida? Você fala direto com a loja e recebe ajuda antes de comprar.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="historia secao" id="historia">
+      <div class="container historia-grid">
+        <div class="historia-visual revelar">
+          <div class="monograma">SF</div>
+          <div class="historia-detalhe historia-detalhe-1"></div>
+          <div class="historia-detalhe historia-detalhe-2"></div>
+          <p>tradição <span>encontra</span> uma nova fase</p>
+        </div>
+
+        <div class="historia-copy revelar">
+          <span class="eyebrow escuro">Nossa história</span>
+          <h2>Moda muda. O cuidado com cada cliente, não.</h2>
+          <p>Há mais de três décadas, a Fornazari constrói sua história no comércio com proximidade, confiança e atenção a cada pessoa que entra pela porta.</p>
+          <p>Agora, a Senhora Fornazari leva essa experiência para o digital: uma loja mais atual, sem perder o jeito humano que sempre fez parte da marca.</p>
+
+          <div class="historia-assinatura">
+            <span></span>
+            <p>Senhora Fornazari<br><small>moda feminina</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <div class="container cta-final-conteudo revelar">
+        <span class="eyebrow">Atendimento próximo, também online</span>
+        <h2>Viu uma peça e quer saber se ela combina com você?</h2>
+        <p>Chama a gente. Tamanho, caimento, disponibilidade ou qualquer dúvida — você fala direto com a loja.</p>
+        <a href="https://wa.me/5514996053610?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20uma%20peça%20da%20Senhora%20Fornazari." target="_blank" rel="noopener noreferrer" class="botao botao-claro">Conversar no WhatsApp</a>
       </div>
     </section>
   </main>
 
   <footer class="rodape" id="contato">
-    <div class="container">
-      <div class="info-rodape">
-        <h3>Fornazari Modas</h3>
-        <p>A moda que expressa quem você é.</p>
+    <div class="container rodape-grid">
+      <div class="rodape-marca">
+        <a class="marca marca-rodape" href="#inicio">
+          <span class="marca-prefixo">Senhora</span>
+          <strong>Fornazari</strong>
+          <span class="marca-sufixo">moda feminina</span>
+        </a>
+        <p>Elegância, proximidade e uma curadoria feita para mulheres reais.</p>
       </div>
-      <div class="contato-rodape">
-        <h3>Contato</h3>
-        <p>Instagram: <a href="https://www.instagram.com/fornazarimodas" target="_blank" rel="noopener">@fornazarimodas</a></p>
-        <p>WhatsApp 1: (14) 99605-3610</p>
-        <p>WhatsApp 2: (14) 99758-4550</p>
+
+      <div class="rodape-coluna">
+        <h3>Navegue</h3>
+        <a href="#catalogo">Coleção</a>
+        <a href="#historia">Nossa história</a>
+        <button class="snipcart-checkout link-botao">Carrinho</button>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3>Fale com a gente</h3>
+        <a href="https://www.instagram.com/fornazarimodas" target="_blank" rel="noopener noreferrer">@fornazarimodas</a>
+        <a href="https://wa.me/5514996053610" target="_blank" rel="noopener noreferrer">(14) 99605-3610</a>
+        <a href="https://wa.me/5514997584550" target="_blank" rel="noopener noreferrer">(14) 99758-4550</a>
       </div>
     </div>
-    <div class="copyright">
-      <p>&copy; 2025 Fornazari Modas. Todos os direitos reservados.</p>
+
+    <div class="container rodape-base">
+      <p>© <span id="ano-atual"></span> Senhora Fornazari. Todos os direitos reservados.</p>
+      <p>Moda feminina · Brasil</p>
     </div>
   </footer>
 
-  <!-- Snipcart container -->
   <div id="snipcart"
        data-api-key="MDgwNTYxMGUtZTE1Yi00MjM1LWI2OWEtZjA1ODk1NWFlOTgzNjM4OTY3NDY0MjY2NDk2OTQ5"
        data-config-modal-style="side"
