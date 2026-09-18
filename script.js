@@ -1,4 +1,14 @@
-const btnMenu = document.querySelector('.btn-hamburger');
+const cabecalhoConteudo = document.querySelector('.cabecalho-conteudo');
+const marca = document.querySelector('.marca');
+
+if (cabecalhoConteudo && marca && !document.querySelector('.oferta-header')) {
+  const oferta = document.createElement('div');
+  oferta.className = 'oferta-header';
+  oferta.innerHTML = '<strong>5% OFF</strong> no PIX';
+  marca.insertAdjacentElement('afterend', oferta);
+}
+
+const btnMenu = document.querySelector('.btn-menu');
 const menuMobile = document.querySelector('.menu-mobile');
 
 if (btnMenu && menuMobile) {
@@ -21,16 +31,6 @@ if (btnMenu && menuMobile) {
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') fecharMenu();
   });
-}
-
-const infoSlides = [...document.querySelectorAll('.info-slide')];
-if (infoSlides.length > 1) {
-  let atual = 0;
-  setInterval(() => {
-    infoSlides[atual].classList.remove('ativo');
-    atual = (atual + 1) % infoSlides.length;
-    infoSlides[atual].classList.add('ativo');
-  }, 3600);
 }
 
 const produtos = [
@@ -70,10 +70,7 @@ const produtos = [
 ];
 
 function moeda(valor) {
-  return valor.toLocaleString('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  });
+  return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
 function criarMidia(produto) {
@@ -88,21 +85,22 @@ function criarMidia(produto) {
     video.playsInline = true;
     video.preload = 'metadata';
     video.autoplay = true;
-    video.setAttribute('aria-label', produto.nome);
     video.play().catch(() => {});
     media.appendChild(video);
   } else if (produto.imagem) {
-    const imagem = document.createElement('img');
-    imagem.src = produto.imagem;
-    imagem.alt = produto.nome;
-    imagem.loading = 'lazy';
-    media.appendChild(imagem);
+    const img = document.createElement('img');
+    img.src = produto.imagem;
+    img.alt = produto.nome;
+    img.loading = 'lazy';
+    media.appendChild(img);
   } else {
     const placeholder = document.createElement('div');
     placeholder.className = 'produto-placeholder';
-    const marca = document.createElement('span');
-    marca.textContent = 'FM';
-    placeholder.appendChild(marca);
+
+    const monograma = document.createElement('span');
+    monograma.textContent = 'FM';
+
+    placeholder.appendChild(monograma);
     media.appendChild(placeholder);
   }
 
@@ -121,12 +119,11 @@ function criarCard(produto) {
   card.className = 'card-produto';
   card.dataset.categoria = produto.categoria;
 
-  const media = criarMidia(produto);
   const info = document.createElement('div');
   info.className = 'produto-info';
 
-  const linha = document.createElement('div');
-  linha.className = 'produto-linha';
+  const topo = document.createElement('div');
+  topo.className = 'produto-topo';
 
   const nome = document.createElement('h3');
   nome.textContent = produto.nome;
@@ -135,7 +132,7 @@ function criarCard(produto) {
   preco.className = 'preco';
   preco.textContent = produto.preco == null ? 'Sob consulta' : moeda(produto.preco);
 
-  linha.append(nome, preco);
+  topo.append(nome, preco);
 
   const descricao = document.createElement('p');
   descricao.className = 'produto-sub';
@@ -143,26 +140,26 @@ function criarCard(produto) {
 
   const tamanhos = document.createElement('div');
   tamanhos.className = 'opcoes-tamanho';
+
   let tamanhoSelecionado = produto.tamanhos[0];
 
   produto.tamanhos.forEach((tamanho, index) => {
-    const opcao = document.createElement('button');
-    opcao.type = 'button';
-    opcao.className = 'tamanho' + (index === 0 ? ' ativo' : '');
-    opcao.textContent = tamanho;
-    opcao.setAttribute('aria-label', 'Selecionar tamanho ' + tamanho);
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.className = 'tamanho' + (index === 0 ? ' ativo' : '');
+    botao.textContent = tamanho;
 
-    opcao.addEventListener('click', () => {
+    botao.addEventListener('click', () => {
       tamanhoSelecionado = tamanho;
-      tamanhos.querySelectorAll('.tamanho').forEach((botao) => botao.classList.remove('ativo'));
-      opcao.classList.add('ativo');
+      tamanhos.querySelectorAll('.tamanho').forEach((item) => item.classList.remove('ativo'));
+      botao.classList.add('ativo');
 
       if (comprar.classList.contains('snipcart-add-item')) {
         comprar.setAttribute('data-item-custom1-value', tamanhoSelecionado);
       }
     });
 
-    tamanhos.appendChild(opcao);
+    tamanhos.appendChild(botao);
   });
 
   const comprar = document.createElement(produto.preco == null ? 'a' : 'button');
@@ -184,44 +181,33 @@ function criarCard(produto) {
     comprar.setAttribute('data-item-custom1-name', 'Tamanho');
     comprar.setAttribute('data-item-custom1-options', produto.tamanhos.join('|'));
     comprar.setAttribute('data-item-custom1-value', tamanhoSelecionado);
-    if (produto.imagem) comprar.setAttribute('data-item-image', produto.imagem);
   }
 
-  info.append(linha, descricao, tamanhos, comprar);
-  card.append(media, info);
+  info.append(topo, descricao, tamanhos, comprar);
+  card.append(criarMidia(produto), info);
 
   return card;
 }
 
 const grid = document.getElementById('grid-produtos');
-const totalProdutos = document.getElementById('total-produtos');
 
 if (grid) {
+  grid.innerHTML = '';
   produtos.forEach((produto) => grid.appendChild(criarCard(produto)));
 }
 
-function aplicarFiltro(valor) {
-  let visiveis = 0;
+const filtros = document.querySelectorAll('.filtro');
 
-  document.querySelectorAll('.card-produto').forEach((card) => {
-    const mostrar = valor === 'todos' || card.dataset.categoria === valor;
-    card.hidden = !mostrar;
-    if (mostrar) visiveis += 1;
-  });
+filtros.forEach((filtro) => {
+  filtro.addEventListener('click', () => {
+    filtros.forEach((item) => item.classList.remove('ativo'));
+    filtro.classList.add('ativo');
 
-  document.querySelectorAll('[data-filtro]').forEach((botao) => {
-    botao.classList.toggle('ativo', botao.dataset.filtro === valor);
-  });
+    const valor = filtro.dataset.filtro;
 
-  if (totalProdutos) {
-    totalProdutos.textContent = visiveis + (visiveis === 1 ? ' produto' : ' produtos');
-  }
-}
-
-document.querySelectorAll('.categoria-link').forEach((botao) => {
-  botao.addEventListener('click', () => {
-    aplicarFiltro(botao.dataset.filtro);
-    document.getElementById('catalogo')?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelectorAll('.card-produto').forEach((card) => {
+      card.hidden = valor !== 'todos' && card.dataset.categoria !== valor;
+    });
   });
 });
 
